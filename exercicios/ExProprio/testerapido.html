@@ -2,84 +2,192 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Portal Segundo Ano B</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<title>Portal de Auxílio | Segundo Ano B</title>
 
-        /* Splash */
-        #splash {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #00ffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 9999;
-            transition: opacity 2s ease;
-        }
+<style>
 
-        /* Texto animado */
-        .splash-text {
-            opacity: 0;
-            transform: translateY(40px);
-            animation: aparecer 2s ease forwards;
-            text-align: center;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-        @keyframes aparecer {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#111;
+color:white;
+}
 
-        /* Conteúdo */
-        #conteudo {
-            display: none;
-            padding: 30px;
-        }
-    </style>
+/* SPLASH */
+
+#splash{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
+url("images/WhatsApp\ Image\ 2026-03-11\ at\ 21.41.06.jpeg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+transition:opacity 1.5s ease;
+}
+
+/* CONTAINER CENTRAL */
+
+.splash-container{
+text-align:center;
+font-family:"Bebas Neue", sans-serif;
+}
+
+/* TITULO */
+
+.titulo{
+
+font-size:90px;
+color:#e50914;
+margin:0;
+opacity:0;
+animation:aparecer 1.5s forwards;
+
+}
+
+/* TURMA */
+
+.turma{
+
+font-size:60px;
+margin-top:10px;
+opacity:0;
+animation:aparecer 1.5s forwards;
+animation-delay:1.2s;
+
+}
+
+/* BARRA */
+
+.barra{
+
+width:0px;
+height:3px;
+background:white;
+margin:20px auto;
+
+animation:barra 1s forwards;
+animation-delay:2.2s;
+
+}
+
+/* ESCOLA */
+
+.escola{
+
+font-size:14px;
+letter-spacing:3px;
+color:#ccc;
+opacity:0;
+animation:aparecer 1s forwards;
+animation-delay:3.2s;
+
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes barra{
+
+from{
+width:0;
+}
+
+to{
+width:275px;
+}
+
+}
+
+/* CONTEÚDO */
+
+#conteudo{
+display:none;
+padding:40px;
+max-width:900px;
+margin:auto;
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <div id="splash">
-        <div class="splash-text">
-            <h1>Portal Segundo Ano B</h1>
-            <p>Centro de Excelência Jhon Kenedy</p>
-        </div>
-    </div>
+<div id="splash">
 
-    <div id="conteudo">
-        <h2>Bem-vindo ao portal</h2>
-        <p>Conteúdo do site aqui.</p>
-    </div>
+<div class="splash-container">
 
-    <script>
-        setTimeout(() => {
+<h1 class="titulo">PORTAL DE AUXÍLIO</h1>
 
-            const splash = document.getElementById("splash");
-            const conteudo = document.getElementById("conteudo");
+<h2 class="turma">SEGUNDO ANO - B</h2>
 
-            splash.style.opacity = "0";
+<div class="barra"></div>
 
-            setTimeout(() => {
-                splash.remove();
-                conteudo.style.display = "block";
-            }, 1500);
+<p class="escola">CENTRO DE EXCELÊNCIA JOHN KENNEDY</p>
 
-        }, 5000);
-    </script>
+</div>
+
+</div>
+
+<div id="conteudo">
+
+<h1>Bem-vindo ao Portal</h1>
+
+<p>
+Aqui você poderá encontrar avisos, atividades, datas importantes e materiais
+da turma do Segundo Ano B.
+</p>
+
+</div>
+
+<script>
+
+setTimeout(()=>{
+
+const splash=document.getElementById("splash");
+const conteudo=document.getElementById("conteudo");
+
+splash.style.opacity="0";
+
+setTimeout(()=>{
+
+splash.remove();
+conteudo.style.display="block";
+
+},1500);
+
+},5500);
+
+</script>
 
 </body>
 
